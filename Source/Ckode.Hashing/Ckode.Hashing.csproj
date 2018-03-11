@@ -4,11 +4,13 @@
     <Copyright>Steffen Skov 2018</Copyright>
     <Authors>Steffen Skov</Authors>
     <Company />
-    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <PackageTags>Ckode, Hashing, MD5, SHA256, PBKDF2, Argon2</PackageTags>
     <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/NQbbe/Ckode.Hashing</PackageProjectUrl>
+    <Description>A collection of simplified wrappers around the most commonly used hashing algorithms.</Description>
+    <Version>1.0.1</Version>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>..\..\Binary\</OutputPath>
