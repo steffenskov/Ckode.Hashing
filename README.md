@@ -18,3 +18,5 @@ The hashes created are converted to Base64 strings and merged with the necessary
 PBKDF2 and Argon2 automatically generate a random salt, whereas MD5 and SHA256 doesn't use salts at all. (They shouldn't be used for passwords anyway, as they're far too easy to brute force)
 
 If you want to hash passwords I strongly recommend Argon2 as it's the most brute force resilient hashing algorithm at the moment of this writing (early 2018)
+
+Also be sure to look at the Ckode.Hashing.Examples project, to see how the different algorithms work.
