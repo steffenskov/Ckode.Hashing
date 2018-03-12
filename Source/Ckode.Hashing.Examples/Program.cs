@@ -7,7 +7,7 @@ namespace Ckode.Hashing.Examples
         static void Main(string[] args)
         {
             var hasher = new Argon2(); // Feel free to change Argon2 to one of the other hashers to see how they work.
-            hasher.Configuration.Iterations = 1 << 16; // Changing configuration to alter difficulty.
+            hasher.Configuration.Iterations = 1 << 2; // Changing configuration to alter difficulty.
 
             var rawInput = "Hello world";
             var hash = hasher.CreateHash(rawInput);
