@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Security.Cryptography;
 using System.Text;
+using System.Threading.Tasks;
 using Ckode.Hashing.Configurations;
 using Konscious.Security.Cryptography;
 
@@ -92,7 +93,8 @@ namespace Ckode.Hashing
 				Salt = salt
 			})
 			{
-				return AsyncHelpers.RunSync(() => argon.GetBytesAsync(outputBytes)); // Messy workaround for poorly implemented "GetBytes" in the Argon lib (the implementation in there can and will deadlock)
+                return Task.Run(async () => await argon.GetBytesAsync(outputBytes)).Result;
+                    //AsyncHelpers.RunSync(() => argon.GetBytesAsync(outputBytes)); // Messy workaround for poorly implemented "GetBytes" in the Argon lib (the implementation in there can and will deadlock)
 			}
 		}
     }
