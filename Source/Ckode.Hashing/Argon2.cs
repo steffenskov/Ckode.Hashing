@@ -92,7 +92,7 @@ namespace Ckode.Hashing
 				Salt = salt
 			})
 			{
-				return argon.GetBytes(outputBytes);
+				return AsyncHelpers.RunSync(() => argon.GetBytesAsync(outputBytes)); // Messy workaround for poorly implemented "GetBytes" in the Argon lib (the implementation in there can and will deadlock)
 			}
 		}
     }
