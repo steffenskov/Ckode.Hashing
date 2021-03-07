@@ -1,0 +1,7 @@
+﻿Version	Date		Developer
+¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯
+2.0.0	07-03-2021	Steffen Skov
+
+	* Moved to .NET Standard 2.0
+	* Added Unit tests
+	* Removed Argon2 as well as its dependency on external packages

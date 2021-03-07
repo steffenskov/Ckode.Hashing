@@ -1,23 +1,19 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+
   <PropertyGroup>
-    <TargetFramework>net46</TargetFramework>
-    <Copyright>Steffen Skov 2018</Copyright>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Version>2.0.0</Version>
     <Authors>Steffen Skov</Authors>
-    <Company />
-    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-    <PackageTags>Ckode, Hashing, MD5, SHA256, PBKDF2, Argon2</PackageTags>
-    <PackageLicenseUrl>https://opensource.org/licenses/MIT</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/NQbbe/Ckode.Hashing</PackageProjectUrl>
+    <Company>Steffen Skov</Company>
     <Description>A collection of simplified wrappers around the most commonly used hashing algorithms.</Description>
-    <Version>1.0.3</Version>
-    <AssemblyVersion>1.0.3.0</AssemblyVersion>
-    <FileVersion>1.0.3.0</FileVersion>
+    <Copyright>Steffen Skov 2018</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/NQbbe/Ckode.Hashing</PackageProjectUrl>
+    <PackageTags>Ckode, Hashing, MD5, SHA256, PBKDF2</PackageTags>
   </PropertyGroup>
+
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\Binary\</OutputPath>
+    <OutputPath>..\..\Binary</OutputPath>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="Konscious.Security.Cryptography.Argon2" Version="1.1.1" />
-  </ItemGroup>
+
 </Project>
