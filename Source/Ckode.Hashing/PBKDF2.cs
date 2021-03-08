@@ -4,7 +4,7 @@ using Ckode.Hashing.Configurations;
 
 namespace Ckode.Hashing
 {
-	public class PBKDF2 : IHashingAlgorithm
+	public class PBKDF2 : IPasswordHashingAlgorithm
 	{
 		public PBKDF2Configuration Configuration { get; } = new PBKDF2Configuration();
 

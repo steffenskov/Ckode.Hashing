@@ -3,20 +3,52 @@ A collection of simplified wrappers around the most commonly used hashing algori
 
 Currently supports the following algorithms:
 - MD5
+- SHA1
 - SHA256
+- SHA384
+- SHA512
 - PBKDF2
-- Argon2
 
-The first 3 algorithms are from the .NET framework, whereas Argon2 is wrapping the great work of kmaragon which can be found here: https://github.com/kmaragon/Konscious.Security.Cryptography
+There's a slight difference between the algorithms though, as PBKDF2 is used for password hashing, with the rest not being suited for this.
+For that reason the PBKDF2 implementation will automatically generated a cryptographically strong random salt for its hash.
 
-All algorithms share a common interface which exposes just 3 methods:
+All algorithms however implement interface which exposes just 3 methods:
 - string CreateHash(string input);
 - bool ValidateHash(string input, string correctHash);
 - bool IsThisAlgorithm(string correctHash);
 
-The hashes created are converted to Base64 strings and merged with the necessary data to verify them in the future (salt, iterations, and so forth).
-PBKDF2 and Argon2 automatically generate a random salt, whereas MD5 and SHA256 doesn't use salts at all. (They shouldn't be used for passwords anyway, as they're far too easy to brute force)
+The hashes created are converted to Base64 strings and merged with the necessary data to verify them in the future (salt, iterations, and so forth, this is only relevant for PBKDF2).
 
-If you want to hash passwords I strongly recommend Argon2 as it's the most brute force resilient hashing algorithm at the moment of this writing (early 2018)
+**Examples:**
 
-Also be sure to look at the Ckode.Hashing.Examples project, to see how the different algorithms work.
+*Create a hash value:*
+
+    var hasher = new MD5();
+    var hashedValue = hasher.CreateHash("Hello world");
+    
+
+*Validate an existing hash value:*
+
+    var hasher = new MD5();
+    var typedInput = "Hello world";
+    string existingHash = GetExistingHashFromSomewhere();
+    var isValid = hasher.ValidateHash(typedInput, existingHash);
+    
+    
+**Word of caution:**
+Do not validate hashes by creating a new hash from your input, and comparing it directly to your existing hash. This will FAIL when using PBKDF2 due to the random salt.
+
+
+*Finally a neat trick for validating existing hashes without knowing the algorithm:*
+
+This one involves using a servicelocator/dependency injection tool of sorts, here I'm using my own library: https://github.com/NQbbe/Ckode.ServiceLocator.
+
+    var serviceLocator = new ServiceLocator();
+    string existingHash = GetExistingHashFromSomewhere();
+    var hasher = serviceLocator.CreateInstance<IHashingAlgorithm>(hashAlgorithm => hashAlgorithim.IsThisAlgorithm(existingHash));
+    var typedInput = "Hello world";
+    var isValid = hasher.ValidateHash(typedInput, existingHash);
+    
+**Note:**
+PBKDF2 does not implement the IHashingAlgorithm interface, but rather IPasswordHashingAlgorithm. The signature of the two interfaces is (currently) identical, but it may differ in the future.
+Furthermore this offers a slight amount of protection against improperly using a non-password suited hashing algorithm when using dependency injection/servicelocator.

@@ -1,9 +1,9 @@
 ﻿namespace Ckode.Hashing
 {
 	/// <summary>
-	/// Interface for a hashing algorithm.
+	/// Interface for a password hashing algorithm.
 	/// </summary>
-	public interface IHashingAlgorithm
+	public interface IPasswordHashingAlgorithm
 	{
 		/// <summary>
 		/// Creates a hash from the given input.

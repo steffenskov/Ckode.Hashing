@@ -2,14 +2,14 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <Version>2.0.0</Version>
+    <Version>2.1.0</Version>
     <Authors>Steffen Skov</Authors>
     <Company>Steffen Skov</Company>
     <Description>A collection of simplified wrappers around the most commonly used hashing algorithms.</Description>
     <Copyright>Steffen Skov 2018</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/NQbbe/Ckode.Hashing</PackageProjectUrl>
-    <PackageTags>Ckode, Hashing, MD5, SHA256, PBKDF2</PackageTags>
+    <PackageTags>Ckode, Hashing, MD5, SHA1, SHA256, SHA384, SHA512, PBKDF2</PackageTags>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
