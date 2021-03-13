@@ -19,7 +19,12 @@ All algorithms however implement interface which exposes just 3 methods:
 
 The hashes created are converted to Base64 strings and merged with the necessary data to verify them in the future (salt, iterations, and so forth, this is only relevant for PBKDF2).
 
-**Examples:**
+## Installation:
+
+I recommend using the NuGet package: https://www.nuget.org/packages/Ckode.Hashing/ however you can also simply clone the repository and use the pre-compiled binaries or compile the project yourself.
+As the project is licensed under MIT you're free to use it for pretty much anything you want.
+
+## Examples:
 
 *Create a hash value:*
 
