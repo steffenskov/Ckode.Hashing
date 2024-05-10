@@ -11,9 +11,4 @@
     <PackageProjectUrl>https://github.com/NQbbe/Ckode.Hashing</PackageProjectUrl>
     <PackageTags>Ckode, Hashing, MD5, SHA1, SHA256, SHA384, SHA512, PBKDF2</PackageTags>
   </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
-    <OutputPath>..\..\Binary</OutputPath>
-  </PropertyGroup>
-
 </Project>

@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net5.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
 
     <IsPackable>false</IsPackable>
   </PropertyGroup>
@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Ckode.Hashing\Ckode.Hashing.csproj" />
+    <ProjectReference Include="..\..\src\Ckode.Hashing\Ckode.Hashing.csproj" />
   </ItemGroup>
 
 </Project>
